@@ -11,7 +11,7 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
     def latest_publishment(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days = 1)
+        return self.pub_date >= timezone.now() - datetime.timedelta(days = 1) and self.pub_date <= timezone.now()
 
 
 class Choice(models.Model):
